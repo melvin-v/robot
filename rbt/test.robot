@@ -3,7 +3,10 @@ Library    Browser
 
 *** Test Cases ***
 Abrir Página y Verificar Título
-    New Browser    headless=False
+    New Browser    headless=True
     New Page    https://www.google.com.gt/
-    Get Title    ==    Example Domain
+    ${title}    Get Title
+    Log    ${title}
+    Should Contain    ${title}    Google
     Close Browser
+

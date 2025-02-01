@@ -1,0 +1,48 @@
+{"level":30,"time":"2025-02-01T12:33:14.207Z","pid":16810,"hostname":"d7f79c576c12","msg":"Listening on 52463"}
+(node:16810) DeprecationWarning: Calling start() is no longer necessary. It can be safely omitted.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+{"level":30,"time":"2025-02-01T12:33:14.325Z","pid":16810,"hostname":"d7f79c576c12","msg":"Start of node method newBrowser"}
+{"level":30,"time":"2025-02-01T12:33:14.634Z","pid":16810,"hostname":"d7f79c576c12","msg":"Adding browser to stack: chromium, version: 133.0.6943.16"}
+{"level":30,"time":"2025-02-01T12:33:14.634Z","pid":16810,"hostname":"d7f79c576c12","msg":"End of node method newBrowser"}
+{"level":30,"time":"2025-02-01T12:33:14.634Z","pid":16810,"hostname":"d7f79c576c12","msg":"Adding 0 contexts to browser"}
+{"level":30,"time":"2025-02-01T12:33:14.642Z","pid":16810,"hostname":"d7f79c576c12","msg":"Start of node method newPage"}
+{"level":30,"time":"2025-02-01T12:33:14.643Z","pid":16810,"hostname":"d7f79c576c12","msg":"currentBrowser: [object Object]"}
+{"level":30,"time":"2025-02-01T12:33:14.655Z","pid":16810,"hostname":"d7f79c576c12","msg":"Changed active context"}
+{"level":30,"time":"2025-02-01T12:33:14.780Z","pid":16810,"hostname":"d7f79c576c12","msg":"Video path: undefined"}
+{"level":30,"time":"2025-02-01T12:33:14.781Z","pid":16810,"hostname":"d7f79c576c12","msg":"Changed active page"}
+{"level":30,"time":"2025-02-01T12:33:15.840Z","pid":16810,"hostname":"d7f79c576c12","msg":"End of node method newPage"}
+{"level":30,"time":"2025-02-01T12:33:15.865Z","pid":16810,"hostname":"d7f79c576c12","msg":"Start of node method closeBrowser"}
+{"level":30,"time":"2025-02-01T12:33:15.872Z","pid":16810,"hostname":"d7f79c576c12","msg":"Removed page=e5d50144-178b-48f6-bb8b-eced520e4883 from context=c42d527a-d2ad-4399-a453-d16c90c165b0 page stack"}
+{"level":30,"time":"2025-02-01T12:33:15.943Z","pid":16810,"hostname":"d7f79c576c12","msg":"End of node method closeBrowser"}
+================= Original suppressed error =================
+Error: Browser has been closed.
+    at PlaywrightState.getActiveBrowser (/usr/local/lib/python3.9/site-packages/Browser/wrapper/index.js:12223:15)
+    at PlaywrightServer.getActiveBrowser (/usr/local/lib/python3.9/site-packages/Browser/wrapper/index.js:13119:59)
+    at PlaywrightServer.setTimeout (/usr/local/lib/python3.9/site-packages/Browser/wrapper/index.js:13367:57)
+    at Object.onReceiveHalfClose (/usr/local/lib/python3.9/site-packages/Browser/wrapper/node_modules/@grpc/grpc-js/build/src/server.js:1425:25)
+    at BaseServerInterceptingCall.maybePushNextMessage (/usr/local/lib/python3.9/site-packages/Browser/wrapper/node_modules/@grpc/grpc-js/build/src/server-interceptors.js:569:31)
+    at BaseServerInterceptingCall.handleEndEvent (/usr/local/lib/python3.9/site-packages/Browser/wrapper/node_modules/@grpc/grpc-js/build/src/server-interceptors.js:609:14)
+    at ServerHttp2Stream.<anonymous> (/usr/local/lib/python3.9/site-packages/Browser/wrapper/node_modules/@grpc/grpc-js/build/src/server-interceptors.js:376:18)
+    at ServerHttp2Stream.emit (node:events:526:35)
+    at endReadableNT (node:internal/streams/readable:1376:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
+=============================================================
+{"level":30,"time":"2025-02-01T12:33:15.951Z","pid":16810,"hostname":"d7f79c576c12","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2025-02-01T12:33:15.951Z","pid":16810,"hostname":"d7f79c576c12","msg":"End of node method getBrowserCatalog"}
+================= Original suppressed error =================
+Error: Browser has been closed.
+    at PlaywrightState.getActiveBrowser (/usr/local/lib/python3.9/site-packages/Browser/wrapper/index.js:12223:15)
+    at PlaywrightServer.getActiveBrowser (/usr/local/lib/python3.9/site-packages/Browser/wrapper/index.js:13119:59)
+    at PlaywrightServer.setTimeout (/usr/local/lib/python3.9/site-packages/Browser/wrapper/index.js:13367:57)
+    at Object.onReceiveHalfClose (/usr/local/lib/python3.9/site-packages/Browser/wrapper/node_modules/@grpc/grpc-js/build/src/server.js:1425:25)
+    at BaseServerInterceptingCall.maybePushNextMessage (/usr/local/lib/python3.9/site-packages/Browser/wrapper/node_modules/@grpc/grpc-js/build/src/server-interceptors.js:569:31)
+    at BaseServerInterceptingCall.handleEndEvent (/usr/local/lib/python3.9/site-packages/Browser/wrapper/node_modules/@grpc/grpc-js/build/src/server-interceptors.js:609:14)
+    at ServerHttp2Stream.<anonymous> (/usr/local/lib/python3.9/site-packages/Browser/wrapper/node_modules/@grpc/grpc-js/build/src/server-interceptors.js:376:18)
+    at ServerHttp2Stream.emit (node:events:526:35)
+    at endReadableNT (node:internal/streams/readable:1376:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
+=============================================================
+{"level":30,"time":"2025-02-01T12:33:15.957Z","pid":16810,"hostname":"d7f79c576c12","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2025-02-01T12:33:15.958Z","pid":16810,"hostname":"d7f79c576c12","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2025-02-01T12:33:16.039Z","pid":16810,"hostname":"d7f79c576c12","msg":"Start of node method closeAllBrowsers"}
+{"level":30,"time":"2025-02-01T12:33:16.039Z","pid":16810,"hostname":"d7f79c576c12","msg":"End of node method closeAllBrowsers"}

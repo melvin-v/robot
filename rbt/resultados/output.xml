@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2 (Python 3.9.21 on linux)" generated="2025-02-01T12:33:13.233251" rpa="false" schemaversion="5">
+<suite id="s1" name="Test" source="/code/rbt/test.robot">
+<test id="s1-t1" name="Abrir Página y Verificar Título" line="5">
+<kw name="New Browser" owner="Browser">
+<msg time="2025-02-01T12:33:13.441158" level="INFO">{"browser": "chromium", "headless": true, "chromiumSandbox": false, "devtools": false, "handleSIGHUP": true, "handleSIGINT": true, "handleSIGTERM": true, "slowMo": 0.0, "timeout": 30000.0, "tracesDir": "/code/rbt/resultados/browser/traces/temp/365d9fb6-40c4-4754-bab6-d7c284ec4450"}</msg>
+<msg time="2025-02-01T12:33:13.531687" level="INFO">Starting Browser process /usr/local/lib/python3.9/site-packages/Browser/wrapper/index.js using port 52463</msg>
+<msg time="2025-02-01T12:33:13.531909" level="INFO">Node startup parameters: ['node', '/usr/local/lib/python3.9/site-packages/Browser/wrapper/index.js', '52463']</msg>
+<msg time="2025-02-01T12:33:14.635451" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":true,"chromiumSandbox":false,"devtools":false,"handleSIGHUP":true,"handleSIGINT":true,"handleSIGTERM":true,"slowMo":0,"timeout":30000,"tracesDir":"/code/rbt/resultados/browser/traces/temp/365d9fb6-40c4-4754-bab6-d7c284ec4450"}</msg>
+<arg>headless=True</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.</doc>
+<status status="PASS" start="2025-02-01T12:33:13.439016" elapsed="1.196805"/>
+</kw>
+<kw name="New Page" owner="Browser">
+<msg time="2025-02-01T12:33:15.842496" level="INFO">Successfully initialized new page object and opened url: https://www.google.com.gt/</msg>
+<msg time="2025-02-01T12:33:15.842625" level="INFO">No context was open. New context was automatically opened when this page is created.</msg>
+<arg>https://www.google.com.gt/</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<status status="PASS" start="2025-02-01T12:33:14.636393" elapsed="1.206473"/>
+</kw>
+<kw name="Get Title" owner="Browser">
+<msg time="2025-02-01T12:33:15.857657" level="INFO">Title: 'Google'</msg>
+<msg time="2025-02-01T12:33:15.857871" level="INFO">${title} = Google</msg>
+<var>${title}</var>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the title of the current page.</doc>
+<status status="PASS" start="2025-02-01T12:33:15.843264" elapsed="0.014640"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-02-01T12:33:15.859666" level="INFO">Google</msg>
+<arg>${title}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-02-01T12:33:15.858242" elapsed="0.001506"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${title}</arg>
+<arg>Google</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2025-02-01T12:33:15.859998" elapsed="0.001242"/>
+</kw>
+<kw name="Close Browser" owner="Browser">
+<msg time="2025-02-01T12:33:15.943676" level="INFO">Closed browser</msg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-02-01T12:33:15.861576" elapsed="0.082326"/>
+</kw>
+<status status="PASS" start="2025-02-01T12:33:13.437433" elapsed="2.506901"/>
+</test>
+<status status="PASS" start="2025-02-01T12:33:13.235121" elapsed="2.717806"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Test" id="s1" pass="1" fail="0" skip="0">Test</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
