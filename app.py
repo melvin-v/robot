@@ -1,5 +1,6 @@
 import os
 import subprocess
+from dotenv import load_dotenv
 from flask import Flask, jsonify, request
 from flask_sqlalchemy import SQLAlchemy
 from flask_jwt_extended import create_access_token, jwt_required, get_jwt_identity, JWTManager
@@ -12,6 +13,10 @@ app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 app.config["JWT_SECRET_KEY"] = "esta_no_es_una_clave_secreta"  
 db = SQLAlchemy(app)
 jwt = JWTManager(app)
+
+load_dotenv('/code/.env')
+user     = os.getenv("USER")
+password = os.getenv("PASSWORD")
 
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -68,6 +73,31 @@ def login():
 def protected():
     current_user = get_jwt_identity()
     return jsonify(logged_in_as=current_user), 200
+
+@jwt_required()
+@app.route('/run_robot', methods=['POST'])
+def run_robot():
+
+    result = subprocess.run(
+        [
+            'robot', 
+            '--variable', f'USERNAME:{user}', 
+            '--variable', f'PASSWORD:{password}', 
+            '--output', './resultados/output.xml',
+            '--log', './resultados/log.html',
+            '--report', './resultados/report.html',
+            'rbt/click_guatemala.robot'
+        ],
+        capture_output=True, text=True
+    )
+    
+    # Verificar si el script terminó correctamente
+    if result.returncode == 0:
+        # Si el test pasó, retornar éxito
+        return jsonify({"message": "Login exitoso y test ejecutado correctamente"}), 200
+    else:
+        # Si el test falló, retornar el error
+        return jsonify({"message": "Error en el login o en el test", "error": result.stderr}), 500
 
 
 if __name__ == '__main__':
