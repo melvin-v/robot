@@ -1,4 +1,5 @@
 import os
+import subprocess
 from flask import Flask, jsonify, request
 from flask_sqlalchemy import SQLAlchemy
 from flask_jwt_extended import create_access_token, jwt_required, get_jwt_identity, JWTManager
@@ -61,11 +62,13 @@ def login():
 
     return jsonify({"msg": "Credenciales incorrectas"}), 401
 
+# Solo es para probar que el token funciona
 @app.route("/protected", methods=["GET"])
 @jwt_required()
 def protected():
     current_user = get_jwt_identity()
     return jsonify(logged_in_as=current_user), 200
+
 
 if __name__ == '__main__':
     app.run(debug=True)
